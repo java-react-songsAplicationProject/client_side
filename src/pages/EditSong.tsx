@@ -38,7 +38,7 @@ function RedBar() {
 
 const EditSong = (props:{updateSong:Function} ) => {
   const { songId } = useParams();
-  let [song, setSong] = useState(new Song("", "", "", 0, 0, 0));
+  let [song, setSong] = useState({id:"",title: "",artist: "",price: 0,length: 0,genre:0});
 
   useEffect(() => {
     async function f() {
@@ -140,7 +140,7 @@ const EditSong = (props:{updateSong:Function} ) => {
           <RedBar />
         </form>
       </Box>
-      <BackButton kind="home" />
+      <BackButton navigateTo="songs" />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { AppDispatch } from ".."
+import { AppDispatch } from "./store"
 import {addSongApi, deleteSongApi, getAllSongsApi, getSongByArtistApi, updateSongApi} from "../api/songs.api" 
 import { Song } from "../model/Song"
 import { addSong, deleteSong, editSong, saveSongs } from "./actions/songs"

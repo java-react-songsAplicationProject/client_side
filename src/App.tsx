@@ -1,5 +1,5 @@
 
-import ParentComponent from './components/parentComponent';
+import ParentComponent from './pages/parentComponent';
 
 function App() {
   return (

@@ -4,18 +4,15 @@ import AddIcon from '@mui/icons-material/Add';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
-export default function BackButton(props:any){
+export default function BackButton(props:{navigateTo:any}){
     const nav=useNavigate();
     let navigate=()=>{
-        if(props.kind=="home")
-          nav('/songs');
-        else
-        nav('/songs/add')
+       nav(`/${props.navigateTo}`)
     }
     return (
-    
-    <Button variant="outlined" endIcon= {props.kind=="add"?<AddIcon/>:<ArrowBackIcon/>} onClick={navigate}>
-    {props.kind=="add"?"add":"back"}
+  
+    <Button variant="outlined" endIcon= {props.navigateTo=="songs"?<ArrowBackIcon/>:  <AddIcon/>} onClick={navigate}>
+    {props.navigateTo=="songs"?"back":"add"}
     </Button>
     )
 

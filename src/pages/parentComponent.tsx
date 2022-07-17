@@ -1,11 +1,11 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
-import SongsLandingPage from '../pages/SongsLandingPage';
-import EditSong from '../pages/EditSong';
-import AddSong from '../pages/AddSong';
+import SongsLandingPage from './SongsLandingPage';
+import EditSong from './EditSong';
+import AddSong from './AddSong';
 import { Song } from '../model/Song';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSongThunk, deleteSongThunk, getSongsByArtistThunk, getSongsThunk, updateSongThunk } from '../store/thunk';
-import { AppDispatch, RootState } from '..';
+import { AppDispatch, RootState } from '../store/store';
 
 function ParentComponent() {
   let arr:Song[]=useSelector((state:RootState) => state.sng.songsArr);

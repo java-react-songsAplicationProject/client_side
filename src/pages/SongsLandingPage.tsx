@@ -1,4 +1,4 @@
-import  {  useEffect } from "react";
+import  {  useEffect, useState } from "react";
 import {  Song } from "../model/Song";
 import BackButton from "../components/BackButton";
 import Grid from '@mui/material/Grid';
@@ -11,7 +11,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export default function SongsLandingPage(props:{a:Song[],saveSongs:Function,deleteSong:Function,getSongsByArtist:Function}){
     let arr:Song[]=props.a;
-    let artist:string="";
+    let [artist,setArtist]=useState("");
     useEffect(() => {
         if(!arr.length){
            props.saveSongs()
@@ -24,7 +24,7 @@ export default function SongsLandingPage(props:{a:Song[],saveSongs:Function,dele
       else if(e.key === "Enter"){
         props.getSongsByArtist(artist);
       }
-      artist=e.target.value;
+      setArtist(e.target.value);
     }
     const search=(e:any)=>{
       if(artist=="")
@@ -54,7 +54,7 @@ export default function SongsLandingPage(props:{a:Song[],saveSongs:Function,dele
           </Grid>
         ))}
       </Grid>
-       <BackButton kind="add"/>
+       <BackButton navigateTo="songs/add"/>
        
      </>)
 

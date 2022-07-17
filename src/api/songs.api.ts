@@ -12,12 +12,12 @@ import { Song } from "../model/Song"
         return await axios.put(`http://localhost:8080/songs`,song)
     }
     export async function deleteSongApi(id:string) :Promise<AxiosResponse<any>>{
-        return await axios.delete(`http://localhost:8080/songs/`+id)
+        return await axios.delete(`http://localhost:8080/songs/${id}`)
     }
     export async function getSongByArtistApi(artist:string) :Promise<AxiosResponse<Song[]>>{
-        return await axios.get(`http://localhost:8080/songs/byArtistName/`+artist)
+        return await axios.get(`http://localhost:8080/songs/byArtistName/${artist}`)
     }
     export async function getSongByIdApi(id:string) :Promise<AxiosResponse<Song>>{
-        return await axios.get(`http://localhost:8080/songs/`+id)
+        return await axios.get(`http://localhost:8080/songs/${id}`)
     }
 

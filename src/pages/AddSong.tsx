@@ -118,8 +118,7 @@ export default function AddSong(props: { addSong: Function }) {
           <RedBar />
         </form>
       </Box>
-
-      <BackButton kind="home" />
+      <BackButton navigateTo="songs"/>
     </>
   );
 }
